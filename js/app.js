@@ -28,7 +28,7 @@
             {
                 name: 'Loupy Falcon 9',
                 author: 'Pierre',
-                path: 'Team/loupy/Index.html',
+                path: 'team/loupy/index.html',
                 iframe: true,
                 visibleInMenu: true,
                 isFont: false,
@@ -36,7 +36,7 @@
             {
                 name: 'kévin Shop',
                 author: 'kévin',
-                path: 'Team/kévin/index.html',
+                path: 'team/kévin/index.html',
                 iframe: true,
                 visibleInMenu: true,
                 isFont: true,
