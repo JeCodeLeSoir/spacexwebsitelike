@@ -1,0 +1,190 @@
+/*
+Author: JeCodeLeSoir 'Aurélien Lebreton'
+*/
+.logo{
+    position: relative;
+    display: inline;
+    
+    height: 40px;
+    width: 200px;
+
+    margin: 0 auto;
+
+    font: 14px/28px 'Odibee Sans', cursive, bold;
+    font-size: 35px;
+    text-align: center;
+    padding: 5px;
+}
+
+.logo svg{
+    margin: 10px auto;
+}
+
+.sandWich{
+    position: absolute;
+    right: 0;
+    top:4px;
+    background-color: transparent;
+    border: 0;
+    display: block;
+    width: 40px;
+    height: 40px;
+
+    cursor: pointer;
+
+    color: var(--PrimalColor);
+    font-size: 25px;
+    text-align: center;
+
+    user-select: none;
+}
+
+.sandWich div{
+    display: block;
+    width: 100%;
+    height: 5px;
+    margin: 5px auto;
+    background-color: var(--PrimalColor);
+    border-radius: 5px;
+}
+
+.spaceBar{
+    display: block;
+    height: 48px;
+}
+
+.menu{
+    display: flex;
+    position: fixed;
+
+    background-color: var(--SecondaryBackground);
+    width: 100%;
+    height: 48px;
+
+    z-index: 99999;
+
+    text-align: center;
+    align-items: center;
+
+    @media screen and (min-width: 800px) {
+        display: grid;
+        grid-template-columns: 4fr 1fr 4fr;
+        grid-template-rows: 1;
+    }
+}
+
+.menu .navigation{
+    visibility: hidden;
+    opacity:0;
+    transition:visibility 0.3s linear,opacity 0.3s linear;
+
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    display: block;
+    position:absolute;
+    top: 48px;
+    right: 0;
+    width: 280px;
+    background-color: var(--SecondaryBackground);
+    text-align: center;
+
+    height: 100%;
+    overflow-y: scroll;
+
+    font: 20px/35px 'Odibee Sans', cursive;
+}
+
+.menu .open{
+    visibility:visible;
+    opacity:1;
+}   
+
+.menu .navigation li{
+    display: block;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.menu .navigation li a{
+    color: var(--PrimalColor);
+    padding: 5px;
+
+    cursor: pointer;
+}
+
+.menu .navigation li a:hover{
+    color: var(--SecondaryColor);
+    border:2px solid var(--SecondaryColor);
+}
+
+.menu .navigation::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+
+.menu .navigation::-webkit-scrollbar:vertical {
+    width: 5px;
+    
+}
+
+.menu .navigation::-webkit-scrollbar:horizontal {
+    height: 5px;
+}
+
+.menu .navigation::-webkit-scrollbar-thumb {
+    background-color: white;
+}
+
+.menu .navigation::-webkit-scrollbar-track {
+    background-color: #000000;
+}
+
+.navBarLeft{
+    visibility: hidden;
+    position: absolute;
+
+    font: 20px/35px 'Odibee Sans', cursive;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: auto;
+
+    text-align: right;
+
+    @media screen and (min-width: 800px) {
+        visibility: visible;
+        position: initial;
+    }
+}
+
+.navBarRight{
+    visibility: hidden;
+    position: absolute;
+    font: 20px/35px 'Odibee Sans', cursive; 
+    list-style: none;
+    padding: 0;
+
+    width: auto;
+    margin: 0;
+
+    text-align: left;
+
+    @media screen and (min-width: 800px) {
+        visibility: visible;
+        position: initial;
+    }
+}
+
+.navBarLeft li, .navBarRight li {
+    display: inline;
+    padding: 0;
+    margin: 0;
+}
+
+.navBarLeft li a, .navBarRight li a {
+    padding: 5px;
+    font-size: 20px;
+
+    cursor: pointer;
+}

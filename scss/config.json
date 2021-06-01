@@ -1,0 +1,7 @@
+{
+    "buildDir":"../buildcache/",
+    "files":[
+        { "name":"base.scss", "newname":"pack.css", "dir":"../scss/"}
+    ],
+    "buildEnd": "../style/"
+}

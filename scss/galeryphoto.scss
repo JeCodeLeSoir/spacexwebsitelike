@@ -1,0 +1,27 @@
+/*
+Author: JeCodeLeSoir 'Aurélien Lebreton'
+*/
+.galeryphoto{
+    display: grid;
+
+    width: auto;
+    min-height: 280px;
+
+    grid-template-columns: repeat(auto-fill, 280px);
+    
+    grid-auto-rows: 280px;
+    grid-gap: 2vw;
+
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (min-width: 800px) {
+        grid-template-columns: repeat(3, 280px);
+    }
+}
+
+.galeryphoto img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
