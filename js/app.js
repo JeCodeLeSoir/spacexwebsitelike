@@ -72,8 +72,24 @@
             if (route.isFont) {
                 style.innerText = ` 
                     @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
-                    * { font-family:'Russo One', sans-serif !important; box-sizing:border-box !important; font-size: 20px; }
-                `}
+                    * { 
+                        font-family:'Russo One', sans-serif !important; 
+                        box-sizing:border-box !important; 
+                        font-size: 20px; 
+                    }
+
+                    h1, h2, h3, h4, h5, h6{
+                        font-family: var(--Base-Font-family);
+                        font-size: 25px;
+                    }
+
+                    @media screen and (min-width: 800px) {
+                        h1, h2, h3, h4, h5, h6{
+                            font-size: 35px !important;
+                        }
+                    }
+                `
+            }
 
             style.addEventListener('load', async () => {
                 _iframe.style.height = contentWindow.document.body.offsetHeight - 20 + "px"
