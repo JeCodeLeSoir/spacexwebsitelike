@@ -11,7 +11,7 @@
 
     //=============OU la il u à truc chelou dans se js ???
     const Xcode = "БнубнуϮДнрлЯтгурϮЈϷϮАзгмфгмугϮвЯмсϮлнмϮбнвгϼϮИгϮлгϮорҷсгмтгϮлнзϮбϵгстϮИгБнвгКгСнзрϮϯ"
-    
+
     //=== Router
     //Config
     const Router = {
@@ -38,9 +38,25 @@
                 isFont: true,
             },
             {
-                name: 'kévin Shop',
+                name: 'Shop',
                 author: 'kévin',
-                path: 'team/kévin/index.html',
+                path: 'team/kévin/shop.html',
+                iframe: true,
+                visibleInMenu: true,
+                isFont: true,
+            },
+            {
+                name: 'Careers',
+                author: 'kévin',
+                path: 'team/kévin/careers.html',
+                iframe: true,
+                visibleInMenu: true,
+                isFont: true,
+            },
+            {
+                name: 'Goodies',
+                author: 'kévin',
+                path: 'team/kévin/goodies.html',
                 iframe: true,
                 visibleInMenu: true,
                 isFont: true,
@@ -55,7 +71,7 @@
         return html
     }
 
- 
+
     const GetFooter = async (route) => {
         var footer_html = await GetPage(Router.footer)
         var footer = document.createElement('div')
@@ -109,7 +125,7 @@
             if (route.isFont) {
                 style.innerText = ` 
                     @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
-                    * { font-family:'Russo One', sans-serif !important; box-sizing:border-box !important; font-size: 25px; }
+                    * { font-family:'Russo One', sans-serif !important; box-sizing:border-box !important; font-size: 20px; }
                 `}
 
             style.addEventListener('load', async () => {
@@ -156,6 +172,11 @@
         })
     })
     window.addEventListener('load', FindRoute(Router.default))
+
+    //=== Menu
+    window.addEventListener('resize', () => {
+
+    })
 
     //Button Menu du site
     ButtonSandWich.addEventListener('click', (e) => {
@@ -212,18 +233,18 @@
     })
 
     //x ==> String, code ==> number, return ==> String
-    const XcodeEncode = (x, code)=>{
+    const XcodeEncode = (x, code) => {
         var txt = "";
-        for(var i = 0; i < x.length; i++){
+        for (var i = 0; i < x.length; i++) {
             txt += String.fromCharCode(x[i].charCodeAt(0) + code)
         }
         return txt
     }
 
     //x ==> String, code ==> number, return ==> String
-    const XcodeDecode = (x, code)=>{
+    const XcodeDecode = (x, code) => {
         var txt = "";
-        for(var i = 0; i < x.length; i++){
+        for (var i = 0; i < x.length; i++) {
             txt += String.fromCharCode(x[i].charCodeAt(0) - code)
         }
         return txt
