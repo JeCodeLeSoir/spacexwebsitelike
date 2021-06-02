@@ -1,0 +1,66 @@
+/*
+Author: Kévin Hoarau
+*/
+body {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  background-image: url(../images/spaceX.png);
+  background-size: 100%;
+  background-repeat: repeat-y;
+  font-size: 50px;
+  text-align: center;
+  color: white;
+  text-shadow: 0px 0px 5px black;
+}
+
+h1 {
+  font-size: 60px;
+  padding: 0px;
+  margin: 0px;
+  padding-top: 200px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.goodies {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px;
+  overflow: hidden;
+}
+
+.goodie img {
+  opacity: 0.95;
+  width: 100%;
+}
+
+hr {
+  width: 70%;
+}
+
+.slider {
+  display: flex;
+  flex-direction: row;
+  margin: 100px;
+  animation: slide-it 5s infinite;
+}
+
+.slider_normal {
+  animation-direction: alternate-reverse;
+}
+
+.slider_reverse {
+  animation-direction: alternate;
+}
+
+@keyframes slide-it {
+  0% {
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateX(-100%);
+  }
+}
