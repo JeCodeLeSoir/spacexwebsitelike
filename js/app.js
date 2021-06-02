@@ -58,14 +58,7 @@
 
         var _iframe = document.createElement('iframe')
         _iframe.setAttribute('scrolling', 'no')
-
-
-        //var prom = await fetch('/team/loupy/index.html')
-        //console.log(await prom.text())
-        
         _iframe.src = url
-
-        console.log(route)
 
         _iframe.addEventListener('load', () => {
 
@@ -110,12 +103,21 @@
             htmlRouter.appendChild(footer);
             Loading.classList.remove('open')
         })
-        
+
         htmlRouter.appendChild(_iframe);
     }
 
     //Encore un truc de Xcode Chépaquoi ??? mais c'est pour faire quoi se truc ???
     const mdpXcode = 974;
+
+    const FindPage = (route)=>{
+        if (route.iframe) {
+            FindRouteByIframe(route.path, route)
+        }
+        else {
+            FindRoute(route.path);
+        }
+    }
 
     //Add button in block Navigation
     window.addEventListener('load', async () => {
@@ -127,12 +129,14 @@
             element_a.addEventListener('click', () => {
                 ButtonSandWichOff();
 
-                if (element_menu.iframe) {
-                    FindRouteByIframe(element_menu.path, element_menu)
+                var defaults = window.location.href
+                if(defaults.indexOf('?') !== -1){
+                    defaults = decodeURI(defaults.split('?')[0])
                 }
-                else {
-                    FindRoute(element_menu.path);
-                }
+
+                window.location = defaults + "?" + element_menu.name
+
+                //FindPage(element_menu)
 
                 window.scrollTo({
                     top: 0,
@@ -142,11 +146,18 @@
             NavigationBlock.appendChild(element_li)
         })
     })
-    window.addEventListener('load', FindRoute(Router.default))
 
-    //=== Menu
-    window.addEventListener('resize', () => {
-
+    window.addEventListener('load', ()=> {
+        if(window.location.href.indexOf('?') !== -1){
+            const name = decodeURI(window.location.href.split('?')[1])
+             
+            Router.pages.forEach((route)=>{
+                
+                console.log(name ,route.name)
+                if(name === route.name)
+                    FindPage(route)
+            })
+        }
     })
 
     //Button Menu du site
