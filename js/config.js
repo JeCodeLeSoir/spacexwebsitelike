@@ -26,7 +26,7 @@ const Router = {
     },
     {
       name: 'Shop',
-      author: 'kévin',
+      author: 'Kévin',
       path: 'team/kévin/shop.html',
       iframe: true,
       visibleInMenu: true,
@@ -42,7 +42,7 @@ const Router = {
     },
     {
       name: 'Goodies',
-      author: 'kévin',
+      author: 'Kévin',
       path: 'team/kévin/goodies.html',
       iframe: true,
       visibleInMenu: true,
@@ -50,7 +50,7 @@ const Router = {
     },
     {
       name: 'Payment',
-      author: 'kévin',
+      author: 'Kévin',
       path: 'team/kévin/payment.html',
       iframe: true,
       visibleInMenu: true,
@@ -58,7 +58,7 @@ const Router = {
     },
     {
       name: 'About',
-      author: 'kévin',
+      author: 'Kévin',
       path: 'team/kévin/about.html',
       iframe: true,
       visibleInMenu: true,

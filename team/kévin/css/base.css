@@ -2,8 +2,11 @@
 Author: Kévin Hoarau
 */
 .buy {
-  margin-top: 50px;
-  background-color: rgba(0, 0, 0, 0);
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(0, 0, 0, 0.6);
   border-width: 20px;
   color: white;
   padding: 15px 32px;
@@ -13,4 +16,5 @@ Author: Kévin Hoarau
   border-color: white;
   border-radius: 20px;
   box-shadow: 0px 0px 10px gray;
+  width: 300px;
 }
