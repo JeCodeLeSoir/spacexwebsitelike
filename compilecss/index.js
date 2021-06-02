@@ -5,8 +5,17 @@ Author: JeCodeLeSoir 'Aurélien Lebreton'
 //sass base.scss ../www/style/base-n.css --watch
 
 const browserslist = [
-    "defaults",
-    "maintained node versions"
+    "> 1%",
+    "ie >= 8",
+    "edge >= 15",
+    "ie_mob >= 10",
+    "ff >= 45",
+    "chrome >= 45",
+    "safari >= 7",
+    "opera >= 23",
+    "ios >= 7",
+    "android >= 4",
+    "bb >= 10"
 ]
 
 const config = require("../scss/config.json")
@@ -18,7 +27,6 @@ const path = require('path')
 console.log("-- autoprefixer --");
 
 const { spawn } = require("child_process");
-
 
 config.files.forEach(cfile => {
 
@@ -37,9 +45,11 @@ config.files.forEach(cfile => {
                 })
 
                 console.log("compile..");
+
                 fs.writeFile(config.buildEnd + cfile.newname, result.css, function (err) {
                     if (err) return console.log(err);
-                    console.log('compile');
+                    
+                        console.log('compile');
                 });
             })
         });
