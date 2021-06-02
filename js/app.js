@@ -35,7 +35,7 @@
                 path: 'team/loupy/index.html',
                 iframe: true,
                 visibleInMenu: true,
-                isFont: false,
+                isFont: true,
             },
             {
                 name: 'kévin Shop',
