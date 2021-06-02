@@ -5,6 +5,7 @@ const Router = {
   default: 'pages/home.html',
   route: '/',
   footer: 'pages/footer.html',
+
   pages: [{
       name: 'home',
       path: 'pages/home.html',
@@ -16,7 +17,7 @@ const Router = {
       visibleInMenu: true,
     },
     {
-      name: 'Loupy Falcon 9',
+      name: 'Falcon 9',
       author: 'Pierre',
       path: 'team/loupy/index.html',
       iframe: true,
