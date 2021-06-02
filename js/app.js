@@ -7,7 +7,11 @@
     const ButtonSandWich = document.querySelector('.sandWich')
     const NavigationBlock = document.querySelector('.navigation')
     const htmlRouter = document.querySelector('#router')
+    const Loading = document.querySelector('.loading')
 
+    //=============OU la il u à truc chelou dans se js ???
+    const Xcode = "БнубнуϮДнрлЯтгурϮЈϷϮАзгмфгмугϮвЯмсϮлнмϮбнвгϼϮИгϮлгϮорҷсгмтгϮлнзϮбϵгстϮИгБнвгКгСнзрϮϯ"
+    
     //=== Router
     //Config
     const Router = {
@@ -51,42 +55,39 @@
         return html
     }
 
-    var footer = undefined;
-
-    const Loading = async (route) => {
+ 
+    const GetFooter = async (route) => {
         var footer_html = await GetPage(Router.footer)
-        
-        footer = document.createElement('div')
-
+        var footer = document.createElement('div')
         if (route === undefined) {
             footer_html = footer_html.replace("{{Author}}", "Aurélien")
         }
         else {
             footer_html = footer_html.replace("{{Author}}", route.author)
         }
-
         footer.innerHTML = footer_html
         footer.classList.add('footer')
 
-
-        htmlRouter.innerHTML = '<div class="loading"><span>🚀</span></div>'
-        htmlRouter.appendChild(footer)
+        return footer
     }
 
     const FindRoute = async (url) => {
-        await Loading()
-        await delay(2000)
+        Loading.classList.add('open')
+        const footer = await GetFooter()
+        await delay(1000)
 
         const html = await GetPage(url)
         htmlRouter.innerHTML = html
         htmlRouter.appendChild(footer);
+        Loading.classList.remove('open')
+
         return html
     }
 
     const FindRouteByIframe = async (url, route) => {
-
-        await Loading(route)
-        await delay(2000)
+        Loading.classList.add('open')
+        const footer = await GetFooter(route)
+        await delay(1000)
 
         htmlRouter.innerHTML = "";
 
@@ -95,35 +96,39 @@
         _iframe.src = url
 
         console.log(route)
+
         _iframe.addEventListener('load', () => {
-            
+
+            //Bonjour ceci est un bricolage avec une iframe pour afficher 
+            //des jolis page avec un loading
+            //Et sur tout qui évite des problème de css entre notre équipe :)
+
             var contentWindow = _iframe.contentWindow;
             var style = document.createElement('style')
 
-            console.log(route.isFont)
-            if(route.isFont !== undefined)
-               if(route.isFont)
-                    style.innerText = ` 
-                    @font-face {
-                        font-family: 'Odibee Sans';
-                        src: url(https://fonts.gstatic.com/s/odibeesans/v4/neIPzCSooYAho6WvjeToRbk1cJDfq3se.woff2) format('woff2');
-                    }
-                    *{ font-family:'Odibee Sans'; box-sizing:border-box; }
-                `
+            if (route.isFont) {
+                style.innerText = ` 
+                    @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+                    * { font-family:'Russo One', sans-serif; box-sizing:border-box !important; }
+                `}
 
             style.addEventListener('load', async () => {
                 _iframe.style.height = contentWindow.document.body.offsetHeight - 20 + "px"
             })
+
             contentWindow.document.head.appendChild(style)
             contentWindow.addEventListener('resize', () => {
                 _iframe.style.height = contentWindow.document.body.offsetHeight - 20 + "px"
             })
 
             htmlRouter.appendChild(footer);
+            Loading.classList.remove('open')
         })
-
         htmlRouter.appendChild(_iframe);
     }
+
+    //Encore un truc de Xcode Chépaquoi ??? mais c'est pour faire quoi se truc ???
+    const mdpXcode = 974;
 
     //Add button in block Navigation
     window.addEventListener('load', async () => {
@@ -210,4 +215,22 @@
             behavior: "smooth"
         })
     })
+
+    //x ==> String, code ==> number, return ==> String
+    const XcodeEncode = (x, code)=>{
+        var txt = "";
+        for(var i = 0; i < x.length; i++){
+            txt += String.fromCharCode(x[i].charCodeAt(0) + code)
+        }
+        return txt
+    }
+
+    //x ==> String, code ==> number, return ==> String
+    const XcodeDecode = (x, code)=>{
+        var txt = "";
+        for(var i = 0; i < x.length; i++){
+            txt += String.fromCharCode(x[i].charCodeAt(0) - code)
+        }
+        return txt
+    }
 })()

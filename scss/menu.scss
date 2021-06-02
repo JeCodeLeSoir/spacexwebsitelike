@@ -10,7 +10,7 @@ Author: JeCodeLeSoir 'Aurélien Lebreton'
 
     margin: 0 auto;
 
-    font: 14px/28px 'Odibee Sans', cursive, bold;
+    font: 14px/28px var(--Base-Font-family), bold;
     font-size: 35px;
     text-align: center;
     padding: 5px;
@@ -93,7 +93,7 @@ Author: JeCodeLeSoir 'Aurélien Lebreton'
     height: 100%;
     overflow-y: scroll;
 
-    font: 20px/35px 'Odibee Sans', cursive;
+    font: 20px/35px var(--Base-Font-family);
 }
 
 .menu .open{
@@ -144,7 +144,7 @@ Author: JeCodeLeSoir 'Aurélien Lebreton'
     visibility: hidden;
     position: absolute;
 
-    font: 20px/35px 'Odibee Sans', cursive;
+    font: 20px/35px var(--Base-Font-family);
     list-style: none;
     padding: 0;
     margin: 0;
@@ -161,7 +161,7 @@ Author: JeCodeLeSoir 'Aurélien Lebreton'
 .navBarRight{
     visibility: hidden;
     position: absolute;
-    font: 20px/35px 'Odibee Sans', cursive; 
+    font: 20px/35px var(--Base-Font-family); 
     list-style: none;
     padding: 0;
 
