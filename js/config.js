@@ -20,7 +20,7 @@ const Router = {
       path: 'team/loupy/index.html',
       iframe: true,
       visibleInMenu: true,
-      isFont: true,
+      isFont: false,
     },
     {
       name: 'Shop',
