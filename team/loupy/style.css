@@ -2,15 +2,8 @@
 
 
 /*-----Mobile-----*/
-@font-face
-{ 
-	font-family: 'MyWebFont';
-	src: url('WebFont.eot');
-	src: url('WebFont.eot?iefix') format('eot'),
-	     url('WebFont.woff') format('woff'),
-	     url('WebFont.ttf') format('truetype'),
-	     url('WebFont.svg#webfont') format('svg');
-}
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+ * { font-family:'Russo One', sans-serif !important; box-sizing:border-box !important; }
 
 body
 {
@@ -25,20 +18,17 @@ img
 }
 p
 {
-	font-family: 'MyWebFont', regular, sans-serif;
-	font-size: 110%;
+	font-size: 100%;
 }
 ul
 {
-	font-family: 'MyWebFont', regular, sans-serif;
 	font-size: 110%;
 }
 /*---------Présentation---------*/
 
 
 .falcon9
-{
-	font-family: 'Mywebfont', regular, sans-serif;
+{	
 	text-align: center;
 	padding-top: 30%;
 }
@@ -58,8 +48,7 @@ ul
 	padding-left: 5%;
 }
 .texte-descriptif
-{
-	font-family: 'MyWebFont', regular, sans-serif;
+{	
 	padding-right: 40px;
 	padding-left: 40px;
 }
@@ -74,7 +63,6 @@ ul
 
 .titre-overview
 {
-	font-family: 'MyWebFont', regular, sans-serif;
 	text-align: center;
 	padding-top: 50%;
 	color: black;
@@ -108,8 +96,7 @@ ul
 
 
 .titre-engines
-{
-	font-family: 'MyWebFont', regular, sans-serif;
+{	
 	text-align: center;
 	padding-top: 50%;
 	color: black;
