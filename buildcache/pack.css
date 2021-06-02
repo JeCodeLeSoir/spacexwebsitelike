@@ -364,6 +364,15 @@ a {
   object-fit: cover;
 }
 
+.box > img {
+  width: 200px;
+}
+@media screen and (min-width: 800px) {
+  .box > img {
+    width: 400px;
+  }
+}
+
 .footer {
   width: 100%;
   min-height: 100px;
@@ -473,6 +482,10 @@ a {
 
 .error {
   color: #791212;
+}
+
+.border-radius {
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=pack.css.map */

@@ -1,17 +1,13 @@
 /*
   Author: JeCodeLeSoir 'Aurélien Lebreton'
 */
-(() => {
-    const delay = ms => new Promise(res => setTimeout(res, ms))
+(()=>{
 
-    const ButtonSandWich = document.querySelector('.sandWich')
-    const NavigationBlock = document.querySelector('.navigation')
+    const delay = ms => new Promise(res => setTimeout(res, ms))
     const htmlRouter = document.querySelector('#router')
     const Loading = document.querySelector('.loading')
-
-    //=============OU la il u à truc chelou dans se js ???
-    const Xcode = "БнубнуϮДнрлЯтгурϮЈϷϮАзгмфгмугϮвЯмсϮлнмϮбнвгϼϮИгϮлгϮорҷсгмтгϮлнзϮбϵгстϮИгБнвгКгСнзрϮϯ"
-
+    const NavigationBlock = document.querySelector('.navigation')
+    
     const GetPage = async (url) => {
         const getPagebyFetch = await fetch(url)
         const html = await getPagebyFetch.text()
@@ -35,6 +31,7 @@
 
         return footer
     }
+
 
     const FindRoute = async (url) => {
         Loading.classList.add('open')
@@ -107,9 +104,6 @@
         htmlRouter.appendChild(_iframe);
     }
 
-    //Encore un truc de Xcode Chépaquoi ??? mais c'est pour faire quoi se truc ???
-    const mdpXcode = 974;
-
     const FindPage = (route)=>{
         if (route.iframe) {
             FindRouteByIframe(route.path, route)
@@ -147,6 +141,7 @@
         })
     })
 
+    //load page by link paramatre index.html?NamePage
     window.addEventListener('load', ()=> {
         if(window.location.href.indexOf('?') !== -1){
             const name = decodeURI(window.location.href.split('?')[1])
@@ -168,75 +163,4 @@
         }
     })
 
-    //Button Menu du site
-    ButtonSandWich.addEventListener('click', (e) => {
-        if (NavigationBlock.getAttribute('class').includes('open')) {
-            ButtonSandWichOff();
-        }
-        else {
-            NavigationBlock.classList.add('open')
-            ButtonSandWich.innerHTML = "X"
-        }
-    })
-
-    const ButtonSandWichOff = () => {
-        NavigationBlock.classList.remove('open')
-        ButtonSandWich.innerHTML = `<div></div><div></div><div></div>`
-    }
-
-    //Navigation Block
-    const SetNavigationBlockHeight = () =>
-        NavigationBlock.style.height
-        = (window.screen.height - 48) + 'px'
-
-    window.addEventListener('resize', SetNavigationBlockHeight)
-    window.addEventListener('load', SetNavigationBlockHeight)
-
-    const ButtonScrollTop = document.querySelector('.buttonScrollTop')
-    var IsButtonScrollTopVisible = false;
-
-    //check need button to scroll top
-    window.addEventListener('scroll', () => {
-        ButtonSandWichOff();
-        if (window.scrollY > 88) {
-            if (!IsButtonScrollTopVisible) {
-                if (!ButtonScrollTop.getAttribute('class').includes('open')) {
-                    ButtonScrollTop.classList.add('open')
-                    IsButtonScrollTopVisible = true
-                }
-            }
-        }
-        else {
-            if (IsButtonScrollTopVisible) {
-                ButtonScrollTop.classList.remove('open')
-                IsButtonScrollTopVisible = false
-            }
-        }
-    })
-
-    //Button click scroll navigat top
-    ButtonScrollTop.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        })
-    })
-
-    //x ==> String, code ==> number, return ==> String
-    const XcodeEncode = (x, code) => {
-        var txt = "";
-        for (var i = 0; i < x.length; i++) {
-            txt += String.fromCharCode(x[i].charCodeAt(0) + code)
-        }
-        return txt
-    }
-
-    //x ==> String, code ==> number, return ==> String
-    const XcodeDecode = (x, code) => {
-        var txt = "";
-        for (var i = 0; i < x.length; i++) {
-            txt += String.fromCharCode(x[i].charCodeAt(0) - code)
-        }
-        return txt
-    }
 })()
