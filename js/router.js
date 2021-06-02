@@ -142,9 +142,16 @@
     })
 
     //load page by link paramatre index.html?NamePage
+
     window.addEventListener('load', ()=> {
         if(window.location.href.indexOf('?') !== -1){
-            const name = decodeURI(window.location.href.split('?')[1])
+            var name = decodeURI(window.location.href.split('?')[1])
+            
+            if(name.indexOf('&') !==-1){
+                name = name.split('&')[0]
+                console.log(name)
+            }
+            
             var isFind = false
             for(var i = 0; i< Router.pages.length; i++){
                 route = Router.pages[i]
