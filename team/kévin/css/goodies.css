@@ -43,7 +43,6 @@ hr {
 .slider {
   display: flex;
   flex-direction: row;
-  margin: 100px;
   animation: slide-it 5s infinite;
 }
 
