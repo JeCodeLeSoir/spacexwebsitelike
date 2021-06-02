@@ -309,7 +309,7 @@ a {
   z-index: 999;
 }
 
-.text-box {
+.box .text-box {
   display: inline-block;
   width: 90%;
   height: auto;
@@ -320,12 +320,12 @@ a {
   -webkit-text-stroke-color: black;
 }
 @media screen and (min-width: 800px) {
-  .text-box {
+  .box .text-box {
     text-align: left;
   }
 }
 
-.text-box p {
+.box .text-box p {
   display: inline-block;
   text-align: center;
   min-width: 200px;
@@ -430,12 +430,12 @@ a {
   opacity: 1;
 }
 
-h1, h2, h3, h4, h5, h6 {
+.box h1, h2, h3, h4, h5, h6 {
   font-family: var(--Base-Font-family);
   font-size: 15px;
 }
 @media screen and (min-width: 800px) {
-  h1, h2, h3, h4, h5, h6 {
+  .box h1, h2, h3, h4, h5, h6 {
     font-size: 35px;
   }
 }

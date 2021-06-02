@@ -22,12 +22,14 @@
     const GetFooter = async (route) => {
         var footer_html = await GetPage(Router.footer)
         var footer = document.createElement('div')
+        
         if (route === undefined) {
             footer_html = footer_html.replace("{{Author}}", "Aurélien")
         }
         else {
             footer_html = footer_html.replace("{{Author}}", route.author)
         }
+        
         footer.innerHTML = footer_html
         footer.classList.add('footer')
 
@@ -56,6 +58,11 @@
 
         var _iframe = document.createElement('iframe')
         _iframe.setAttribute('scrolling', 'no')
+
+
+        //var prom = await fetch('/team/loupy/index.html')
+        //console.log(await prom.text())
+        
         _iframe.src = url
 
         console.log(route)
@@ -103,6 +110,7 @@
             htmlRouter.appendChild(footer);
             Loading.classList.remove('open')
         })
+        
         htmlRouter.appendChild(_iframe);
     }
 
