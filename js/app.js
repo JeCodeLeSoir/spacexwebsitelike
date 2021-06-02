@@ -109,7 +109,7 @@
             if (route.isFont) {
                 style.innerText = ` 
                     @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
-                    * { font-family:'Russo One', sans-serif; box-sizing:border-box !important; }
+                    * { font-family:'Russo One', sans-serif !important; box-sizing:border-box !important; }
                 `}
 
             style.addEventListener('load', async () => {
