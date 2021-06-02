@@ -97,6 +97,10 @@
                 _iframe.style.height = contentWindow.document.body.offsetHeight - 20 + "px"
             })
 
+            contentWindow.document.fonts.onloadingdone = function (fontFaceSetEvent) {
+                _iframe.style.height = contentWindow.document.body.offsetHeight - 20 + "px"
+            }
+
             htmlRouter.appendChild(footer);
             Loading.classList.remove('open')
         })

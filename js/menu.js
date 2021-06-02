@@ -11,9 +11,9 @@ const ButtonSandWichOff = () => {
 }
 
 (() => {
-    
-    
 
+   
+    
     //Button Menu du site
     ButtonSandWich.addEventListener('click', (e) => {
         if (NavigationBlock.getAttribute('class').includes('open')) {
