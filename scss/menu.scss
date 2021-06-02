@@ -71,6 +71,8 @@ Author: JeCodeLeSoir 'Aurélien Lebreton'
         grid-template-columns: 4fr 1fr 4fr;
         grid-template-rows: 1;
     }
+
+    box-shadow: white 3px 0px 0px 3px;
 }
 
 .menu .navigation{
@@ -125,7 +127,6 @@ Author: JeCodeLeSoir 'Aurélien Lebreton'
 
 .menu .navigation::-webkit-scrollbar:vertical {
     width: 5px;
-    
 }
 
 .menu .navigation::-webkit-scrollbar:horizontal {

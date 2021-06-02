@@ -39,7 +39,7 @@
     const FindRoute = async (url) => {
         Loading.classList.add('open')
         const footer = await GetFooter()
-        await delay(1000)
+        await delay(100)
 
         const html = await GetPage(url)
         htmlRouter.innerHTML = html
@@ -52,7 +52,7 @@
     const FindRouteByIframe = async (url, route) => {
         Loading.classList.add('open')
         const footer = await GetFooter(route)
-        await delay(1000)
+        await delay(100)
 
         htmlRouter.innerHTML = "";
 
@@ -150,13 +150,21 @@
     window.addEventListener('load', ()=> {
         if(window.location.href.indexOf('?') !== -1){
             const name = decodeURI(window.location.href.split('?')[1])
-             
-            Router.pages.forEach((route)=>{
-                
-                console.log(name ,route.name)
-                if(name === route.name)
+            var isFind = false
+            for(var i = 0; i< Router.pages.length; i++){
+                route = Router.pages[i]
+                if(name === route.name){
                     FindPage(route)
-            })
+                    isFind = true;
+                    break;
+                }
+            }
+            if(!isFind){
+                FindRoute(Router.notFound)
+            }
+        }
+        else{
+            FindRoute(Router.default)
         }
     })
 

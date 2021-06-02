@@ -67,6 +67,7 @@ Author: JeCodeLeSoir 'Aurélien Lebreton'
   z-index: 99999;
   text-align: center;
   align-items: center;
+  box-shadow: white 3px 0px 0px 3px;
 }
 @media screen and (min-width: 800px) {
   .menu {
@@ -494,4 +495,8 @@ a {
   border: 5px solid white;
   background-color: rgba(0, 0, 0, 0.698);
   font-size: 20px;
+}
+
+.error {
+  color: #791212;
 }

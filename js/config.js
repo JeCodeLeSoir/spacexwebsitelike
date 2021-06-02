@@ -1,6 +1,7 @@
 //=== Router
 //Config
 const Router = {
+  notFound:'pages/404.html',
   default: 'pages/home.html',
   route: '/',
   footer: 'pages/footer.html',
