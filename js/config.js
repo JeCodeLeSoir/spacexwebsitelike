@@ -1,7 +1,7 @@
 //=== Router
 //Config
 const Router = {
-  notFound:'pages/404.html',
+  notFound: 'pages/404.html',
   default: 'pages/home.html',
   route: '/',
   footer: 'pages/footer.html',
@@ -49,6 +49,14 @@ const Router = {
       isFont: true,
     },
     {
+      name: 'Payment',
+      author: 'kévin',
+      path: 'team/kévin/payment.html',
+      iframe: true,
+      visibleInMenu: true,
+      isFont: true,
+    },
+    {
       name: 'About',
       author: 'kévin',
       path: 'team/kévin/about.html',
@@ -57,4 +65,4 @@ const Router = {
       isFont: true,
     }
   ]
-}
+};
