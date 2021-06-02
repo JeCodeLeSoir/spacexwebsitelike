@@ -1,0 +1,17 @@
+video {
+  object-fit: cover;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.about {
+  position: relative;
+  padding: 50px;
+  text-align: center;
+  font-size: 50px;
+  color: white;
+  text-shadow: 0px 0px 5px black;
+}
