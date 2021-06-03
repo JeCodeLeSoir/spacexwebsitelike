@@ -278,8 +278,11 @@ Author: JeCodeLeSoir 'Aurélien Lebreton'
   width: 40px;
   height: 40px;
   border-radius: 100%;
-  padding: 5px;
-  border: 2px solid #727272;
+  border: 5px solid #1da1f2;
+}
+.twitter .twit .logo-twitter img {
+  width: 100%;
+  border-radius: 100%;
 }
 @media screen and (min-width: 500px) {
   .twitter .twit {
