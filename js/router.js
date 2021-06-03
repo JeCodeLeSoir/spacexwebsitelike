@@ -37,10 +37,20 @@
         const footer = await GetFooter()
         await delay(100)
 
-        const html = await GetPage(url)
+        var html = await GetPage(url)
+
+        var script;
+        if(html.indexOf("====Script") != -1){
+            var data = html.split("====Script")
+            html = data[0]
+            script = data[1];
+        }
+        
         htmlRouter.innerHTML = html
         htmlRouter.appendChild(footer);
         Loading.classList.remove('open')
+
+        new Function(script)();
 
         return html
     }

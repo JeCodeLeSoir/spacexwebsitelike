@@ -25,3 +25,18 @@ Author: JeCodeLeSoir 'Aurélien Lebreton'
     width: 100%;
     object-fit: cover;
 }
+
+.fullscreen{
+    z-index: -1;
+    position: fixed;
+    top: 48px;
+    display: block;
+    height: 100%;
+    width: 100%;
+
+    img{
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+}
