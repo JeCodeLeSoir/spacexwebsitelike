@@ -1,7 +1,7 @@
 /*
 Author: JeCodeLeSoir 'Aurélien Lebreton'
 */
-.logo{
+.logo {
     position: relative;
     display: inline;
     
@@ -16,11 +16,11 @@ Author: JeCodeLeSoir 'Aurélien Lebreton'
     padding: 5px;
 }
 
-.logo svg{
+.logo svg {
     margin: 10px auto;
 }
 
-.sandWich{
+.sandWich {
     position: absolute;
     right: 0;
     top:4px;
@@ -39,7 +39,7 @@ Author: JeCodeLeSoir 'Aurélien Lebreton'
     user-select: none;
 }
 
-.sandWich div{
+.sandWich div {
     display: block;
     width: 100%;
     height: 5px;
@@ -48,12 +48,12 @@ Author: JeCodeLeSoir 'Aurélien Lebreton'
     border-radius: 5px;
 }
 
-.spaceBar{
+.spaceBar {
     display: block;
     height: 48px;
 }
 
-.menu{
+.menu {
     display: flex;
     position: fixed;
 
@@ -75,7 +75,7 @@ Author: JeCodeLeSoir 'Aurélien Lebreton'
     box-shadow: white 3px 0px 0px 3px;
 }
 
-.menu .navigation{
+.menu .navigation {
     visibility: hidden;
     opacity:0;
     transition:visibility 0.3s linear,opacity 0.3s linear;
@@ -98,25 +98,25 @@ Author: JeCodeLeSoir 'Aurélien Lebreton'
     font: 20px/35px var(--Base-Font-family);
 }
 
-.menu .open{
+.menu .open {
     visibility:visible;
     opacity:1;
 }   
 
-.menu .navigation li{
+.menu .navigation li {
     display: block;
     width: 100%;
     margin-top: 15px;
 }
 
-.menu .navigation li a{
+.menu .navigation li a {
     color: var(--PrimalColor);
     padding: 5px;
 
     cursor: pointer;
 }
 
-.menu .navigation li a:hover{
+.menu .navigation li a:hover {
     color: var(--SecondaryColor);
     border:2px solid var(--SecondaryColor);
 }
@@ -141,7 +141,7 @@ Author: JeCodeLeSoir 'Aurélien Lebreton'
     background-color: #000000;
 }
 
-.navBarLeft{
+.navBarLeft {
     visibility: hidden;
     position: absolute;
 
@@ -159,7 +159,7 @@ Author: JeCodeLeSoir 'Aurélien Lebreton'
     }
 }
 
-.navBarRight{
+.navBarRight {
     visibility: hidden;
     position: absolute;
     font: 20px/35px var(--Base-Font-family); 

@@ -1,13 +1,13 @@
 /*
   Author: JeCodeLeSoir 'Aurélien Lebreton'
 */
-(()=>{
+(() => {
 
     const delay = ms => new Promise(res => setTimeout(res, ms))
     const htmlRouter = document.querySelector('#router')
     const Loading = document.querySelector('.loading')
     const NavigationBlock = document.querySelector('.navigation')
-    
+
     const GetPage = async (url) => {
         const getPagebyFetch = await fetch(url)
         const html = await getPagebyFetch.text()
@@ -18,22 +18,21 @@
     const GetFooter = async (route) => {
         var footer_html = await GetPage(Router.footer)
         var footer = document.createElement('div')
-        
+
         if (route === undefined) {
             footer_html = footer_html.replace("{{Author}}", "Aurélien")
         }
         else {
             footer_html = footer_html.replace("{{Author}}", route.author)
         }
-        
+
         footer.innerHTML = footer_html
         footer.classList.add('footer')
 
         return footer
     }
 
-
-    const FindRoute = async (url) => {
+    const DrawByFetch = async (url) => {
         Loading.classList.add('open')
         const footer = await GetFooter()
         await delay(100)
@@ -46,7 +45,7 @@
         return html
     }
 
-    const FindRouteByIframe = async (url, route) => {
+    const DrawByIframe = async (url, route) => {
         Loading.classList.add('open')
         const footer = await GetFooter(route)
         await delay(100)
@@ -59,7 +58,7 @@
 
         _iframe.addEventListener('load', () => {
 
-            //Bonjour ceci est un bricolage avec une iframe pour afficher 
+            //Ceci est un bricolage avec une iframe pour afficher 
             //des jolis page avec un loading
             //Et sur tout qui évite des problème de css entre notre équipe :)
 
@@ -72,7 +71,8 @@
                     * { 
                         font-family:'Russo One', sans-serif !important; 
                         box-sizing:border-box !important; 
-                        font-size: 20px; 
+                        font-size: 20px;
+                        -webkit-tap-highlight-color: transparent;  
                     }
 
                     h1, h2, h3, h4, h5, h6{
@@ -88,18 +88,14 @@
                 `
             }
 
-            style.addEventListener('load', async () => {
-                _iframe.style.height = contentWindow.document.body.offsetHeight - 20 + "px"
-            })
+            const SetHeightIfram = () => _iframe.style.height = contentWindow.document.body.offsetHeight - 20 + "px"
 
+            style.addEventListener('load', SetHeightIfram)
             contentWindow.document.head.appendChild(style)
-            contentWindow.addEventListener('resize', () => {
-                _iframe.style.height = contentWindow.document.body.offsetHeight - 20 + "px"
-            })
 
-            contentWindow.document.fonts.onloadingdone = function (fontFaceSetEvent) {
-                _iframe.style.height = contentWindow.document.body.offsetHeight - 20 + "px"
-            }
+
+            contentWindow.addEventListener('resize', SetHeightIfram)
+            contentWindow.document.fonts.onloadingdone = SetHeightIfram
 
             htmlRouter.appendChild(footer);
             Loading.classList.remove('open')
@@ -108,14 +104,49 @@
         htmlRouter.appendChild(_iframe);
     }
 
-    const FindPage = (route)=>{
+    const SelectecDrawingPage = (route) => {
         if (route.iframe) {
-            FindRouteByIframe(route.path, route)
+            DrawByIframe(route.path, route)
         }
         else {
-            FindRoute(route.path);
+            DrawByFetch(route.path);
         }
     }
+
+    //Writ And Read Query Url
+    const QueryUrl = () => {
+        const href = decodeURI(window.location.href)
+        const url =  href.indexOf('?') !== -1 ? href.split('?')[0] : href
+        return {
+            params: [],
+            get() {
+                if (href.indexOf('?') !== -1) {
+                    Arraydata = {}
+                    href.split('?')[1].split('&').forEach((e) => {
+                        var params = e.indexOf('=') !== -1 ? e.split('=') : [e, null]
+                        Arraydata[params[0]] = { key: params[0], value: params[1] }
+                    })
+                    return Arraydata
+                } else {
+                    return []
+                }
+            },
+            set(key, value) {
+               this.params.push({key:key, value:value})
+            },
+            goto() {
+                var location = url + (this.params.length > 0 ? '?' : '');
+                for(var i = 0; i<this.params.length; i++){
+                    var data = this.params[i];
+                    location += (data.key + "=" + data.value) 
+                    + (i!== this.params.length-1 ? "&" : "");
+                }
+                console.log(location)
+                window.location = location
+            }
+        }
+    }
+
 
     //Add button in block Navigation
     window.addEventListener('load', async () => {
@@ -124,53 +155,49 @@
             const element_a = document.createElement('a')
             element_a.innerText = element_menu.name.toUpperCase();
             element_li.appendChild(element_a)
+
             element_a.addEventListener('click', () => {
+
                 ButtonSandWichOff();
 
-                var defaults = window.location.href
-                if(defaults.indexOf('?') !== -1){
-                    defaults = decodeURI(defaults.split('?')[0])
-                }
+                var Query = QueryUrl()
 
-                window.location = defaults + "?" + element_menu.name
-
-                //FindPage(element_menu)
+                Query.set('page', element_menu.name)
+                Query.goto()
 
                 window.scrollTo({
                     top: 0,
                     behavior: "smooth"
                 })
             })
+
             NavigationBlock.appendChild(element_li)
         })
     })
 
     //load page by link paramatre index.html?NamePage
+    window.addEventListener('load', () => {
 
-    window.addEventListener('load', ()=> {
-        if(window.location.href.indexOf('?') !== -1){
-            var name = decodeURI(window.location.href.split('?')[1])
-            
-            if(name.indexOf('&') !==-1){
-                name = name.split('&')[0]
-                console.log(name)
-            }
-            
+        var Query = QueryUrl().get()
+
+        if (Query.page) {
+
             var isFind = false
-            for(var i = 0; i< Router.pages.length; i++){
+
+            for (var i = 0; i < Router.pages.length; i++) {
                 route = Router.pages[i]
-                if(name === route.name){
-                    FindPage(route)
+                if (Query.page.value === route.name) {
+                    SelectecDrawingPage(route)
                     isFind = true;
                     break;
                 }
             }
-            if(!isFind){
-                FindRoute(Router.notFound)
+            if (!isFind) {
+                FindRouteByFetch(Router.notFound)
             }
         }
-        else{
-            FindRoute(Router.default)
+        else {
+            FindRouteByFetch(Router.default)
         }
     })
 

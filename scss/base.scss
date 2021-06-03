@@ -6,6 +6,8 @@ Author: JeCodeLeSoir 'Aurélien Lebreton'
 /* https://fonts.google.com/icons?icon.query=home */
 /* http://github.com/google/material-design-icons/ */
 @import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+@import './loading.scss';
 @import './menu.scss';
 @import './galeryphoto.scss';
 
@@ -70,49 +72,6 @@ a {
 #router iframe body {
     font:14px/28px var(--Base-Font-family);
 }
-
-.loading{
-    visibility: hidden;
-    opacity:0;
-    transition:visibility 0.3s linear,opacity 0.3s linear;
-
-    position: fixed;
-    display: grid;
-    width: 100%;
-    min-height: 100%;
-
-    grid-template-columns: 5fr 4fr 5fr;
-    grid-template-rows: 5fr 4fr 5fr;
-
-    text-align: center;
-
-    align-items: center;
-
-    user-select: none;
-
-    background-color: var(--SecondaryBackground);
-
-    z-index: 9999;
-}
-
-.loading span{
-   grid-row: 2;
-   grid-column: 2;
-
-   background-color: transparent;
-
-   display: block;
-   width: 100px;
-   height: 100px;
-    
-   font-size: 70px;
-    
-   margin: 0 auto;
-
-   animation:spin 4s linear infinite;
-}
-
-@keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
 
 .box{
     display: block;
@@ -194,7 +153,7 @@ a {
     }
 }
 
-.footer{
+.footer {
     width: 100%;
     min-height: 100px;
     text-align: center;
@@ -226,6 +185,7 @@ a {
 
     user-select: none;
 }
+
 .footer ul li a:hover{
     color:var(--PrimalColor);
     border: 2px solid var(--PrimalColor) ;
