@@ -258,6 +258,7 @@ Author: JeCodeLeSoir 'Aurélien Lebreton'
 }
 
 .fullscreen {
+  background-color: rgba(0, 0, 0, 0.8);
   z-index: -1;
   position: fixed;
   top: 48px;
@@ -267,9 +268,7 @@ Author: JeCodeLeSoir 'Aurélien Lebreton'
 }
 .fullscreen img {
   height: 100%;
-  width: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  width: auto;
 }
 
 .twitter {
