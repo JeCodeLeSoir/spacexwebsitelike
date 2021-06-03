@@ -193,11 +193,11 @@
                 }
             }
             if (!isFind) {
-                FindRouteByFetch(Router.notFound)
+                DrawByFetch(Router.notFound)
             }
         }
         else {
-            FindRouteByFetch(Router.default)
+            DrawByFetch(Router.default)
         }
     })
 
