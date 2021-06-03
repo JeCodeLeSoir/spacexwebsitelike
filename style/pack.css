@@ -281,6 +281,7 @@ Author: JeCodeLeSoir 'Aurélien Lebreton'
 .fullscreen img {
   width: 80%;
   height: auto;
+  border: 2px solid white;
 }
 @media screen and (min-width: 800px) {
   .fullscreen img {
