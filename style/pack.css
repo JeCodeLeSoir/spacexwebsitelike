@@ -263,13 +263,30 @@ Author: JeCodeLeSoir 'Aurélien Lebreton'
   z-index: -1;
   position: fixed;
   top: 48px;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   height: 100%;
   width: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .fullscreen img {
-  height: 100%;
-  width: auto;
+  width: 80%;
+  height: auto;
+}
+@media screen and (min-width: 800px) {
+  .fullscreen img {
+    width: auto;
+    height: 80%;
+  }
 }
 
 .twitter {
