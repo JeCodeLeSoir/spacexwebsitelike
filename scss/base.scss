@@ -10,6 +10,7 @@ Author: JeCodeLeSoir 'Aurélien Lebreton'
 @import './loading.scss';
 @import './menu.scss';
 @import './galeryphoto.scss';
+@import './twitter.scss';
 
 :root{
     --background: rgb(0, 0, 0);
@@ -243,31 +244,39 @@ a {
 .launchStart{
     display: grid;
     grid-template-rows: repeat(auto-fill, 258px);
-    font-size: 40px;
     height: 700px;
 
     align-items: center;
-}
 
-.launchStart .info{
-   display: block;
-   grid-row: 2;
-   line-height: 50px;
-   color: white;
-    
-   padding: 20%;
-   text-align: center;
+    .info{
+        display: block;
+        grid-row: 2;
+        line-height: 50px;
+        color: white;
+         
+        padding: 0%;
+        text-align: center;
+     
+        @media screen and (min-width: 500px) {
+         padding: 20%;
+        }
+     
+        @media screen and (min-width: 800px) {
+         line-height: 35px;
+        }
 
-   @media screen and (min-width: 800px) {
-    line-height: 35px;
-   }
-}
+        p{
+            padding: 15px;
+            border: 5px solid white;
+            background-color: rgba(0, 0, 0, 0.698);
+            font-size: 14px;
 
-.launchStart .info p{
-    padding: 15px;
-    border: 5px solid white;
-    background-color: rgba(0, 0, 0, 0.698);
-    font-size: 20px;
+            @media screen and (min-width: 500px) {
+                font-size: 20px;
+            }
+
+        }
+     }
 }
 
 .error{
