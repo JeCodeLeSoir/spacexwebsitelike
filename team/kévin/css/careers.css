@@ -19,10 +19,13 @@ img {
 .description {
   display: flex;
   flex-direction: column;
+  align-items: center;
   padding: 50px;
 }
 
 .stargate {
+  padding: auto;
+  width: 60%;
   animation: roll 150s infinite;
 }
 
