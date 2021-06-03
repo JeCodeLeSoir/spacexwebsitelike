@@ -12,7 +12,7 @@ const Router = {
       visibleInMenu: true,
     },
     {
-      name: 'Galery Photo',
+      name: 'Gallery Photo',
       path: 'pages/galeryphoto.html',
       visibleInMenu: true,
     },
