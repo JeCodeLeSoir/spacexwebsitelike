@@ -1,15 +1,9 @@
 const galeryphoto = () => {
-    console.log("galeryphoto")
 
     const Photos = document.querySelectorAll('.photo')
-
-    console.log(Photos)
-
     const Fullscreen = document.querySelector('.fullscreen')
     
     Photos.forEach((photo)=>{
-
-        console.log(photo)
 
         photo.addEventListener('click', ()=>{
            var divphoto = document.createElement('div')
