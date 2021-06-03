@@ -1,5 +1,19 @@
 //=== Router
 //Config
+
+//exemple add pages
+/*
+  pages -->
+  {
+      name: 'exemple',
+      author: 'author',
+      path: 'url',
+      iframe: true, //is ifram
+      visibleInMenu: true, //is visible
+      isFont: false, //is active font
+  }
+*/
+
 const Router = {
   notFound: 'pages/404.html',
   default: 'pages/home.html',

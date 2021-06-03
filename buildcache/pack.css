@@ -390,7 +390,6 @@ a {
   font: 14px/28px var(--Base-Font-family);
   z-index: 999;
 }
-
 .box .text-box {
   display: inline-block;
   width: 90%;
@@ -406,7 +405,6 @@ a {
     text-align: left;
   }
 }
-
 .box .text-box p {
   display: inline-block;
   text-align: center;
