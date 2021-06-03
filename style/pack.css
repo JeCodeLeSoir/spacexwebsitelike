@@ -255,6 +255,7 @@ Author: JeCodeLeSoir 'Aurélien Lebreton'
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+  cursor: pointer;
 }
 
 .fullscreen {
