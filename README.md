@@ -3,13 +3,13 @@
 
 # Author
 
-* Kévin * [Entropeex](https://github.com/entropeex)
+*  [Kévin](https://github.com/entropeex)
 
-* Pierre *
+* Pierre
 
-* Aurélien * [JeCodeLeSoir](https://github.com/JeCodeLeSoir)
+* Aurélien [Aurélien](https://github.com/JeCodeLeSoir)
 
-* Youssouf *
+* Youssouf
 
 # Link
 https://JeCodeLeSoir.github.io/spacexwebsitelike/
