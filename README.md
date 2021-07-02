@@ -2,9 +2,13 @@
 
 
 # Author
+
 --Kévin [Entropeex](https://github.com/entropeex)
+
 -- Pierre
+
 -- Aurélien [JeCodeLeSoir](https://github.com/JeCodeLeSoir)
+
 -- Youssouf
 
 # Link
