@@ -3,11 +3,11 @@
 
 # Author
 
-*  [Kévin](https://github.com/entropeex)
+* [Kévin](https://github.com/entropeex)
 
 * Pierre
 
-* Aurélien [Aurélien](https://github.com/JeCodeLeSoir)
+* [Aurélien](https://github.com/JeCodeLeSoir)
 
 * Youssouf
 
