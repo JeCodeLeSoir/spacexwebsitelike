@@ -17,13 +17,16 @@ https://JeCodeLeSoir.github.io/spacexwebsitelike/
 # github server
 # 404.md redirect to 404.html
 
-# compile Scss
-# cd compilecss
-# node index
+```cmd
+c:\ compile Scss
+c:\ cd compilecss
+c:\ node index
+
+```
 
 # exemple add pages
 # js/config.js
-/*
+```js
   pages -->
   {
       name: 'exemple',
@@ -33,4 +36,4 @@ https://JeCodeLeSoir.github.io/spacexwebsitelike/
       visibleInMenu: true, //is visible
       isFont: false, //is active font
   }
-*/
+```
