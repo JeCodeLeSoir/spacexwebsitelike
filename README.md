@@ -3,7 +3,7 @@
 
 # Author
 
-* [Kévin](https://github.com/entropeex)
+* [Kévin](https://github.com/entropeek)
 
 * Pierre
 
